@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Wishlist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class WishlistController extends Controller
 {
@@ -11,26 +13,40 @@ class WishlistController extends Controller
     public function index()
     {
         $data = Wishlist::all();
-        return view('list')->with('wishlist', $data);
+        return view('wishlist.list')->with('wishlist', $data);
     }
 
 
     public function create()
     {
-        return view('create');
+        return view('wishlist.create');
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-        'name' => 'required',
-        'product_link' => 'required',
-        'description' => 'required',
-        'thumbnail_name' => 'required',
-        'price' => 'required'
-        ]);
-        Wishlist::create($request->all());
-        return redirect('/');
+
+        if (!Auth::check()) { return; }
+
+        if ($request->hasFile('image')) {
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'null.jpg';
+        }
+
+        $wishlist = new Wishlist();
+        $wishlist->user_id = Auth::id();
+        $wishlist->name = $request->name;
+        $wishlist->thumbnail_name = $fileNameToStore;
+        $wishlist->description = $request->description;
+        $wishlist->price = $request->price;
+        $wishlist->product_link = $request->product_link;
+        $wishlist->save();
+
+        return redirect('wishlist.list');
     }
 
     public function show($id)
@@ -42,7 +58,7 @@ class WishlistController extends Controller
     {
         $where = array('id' => $id);
         $data = Wishlist::where($where)->first();
-        return view('edit')->with('wishlist', $data);
+        return view('wishlist.edit')->with('wishlist', $data);
     }
 
     public function update(Request $request, $id)
@@ -62,7 +78,7 @@ class WishlistController extends Controller
             'price' => $request->price
         ];
         Wishlist::where('id', $id)->update($update);
-        return redirect('/');
+        return redirect('wishlist.list');
     }
 
 

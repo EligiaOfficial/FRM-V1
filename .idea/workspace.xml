@@ -1,13 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="474282a5-1e0b-4261-9945-1ca2363d449b" name="Default Changelist" comment="" />
+    <list default="true" id="474282a5-1e0b-4261-9945-1ca2363d449b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Jaspe.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/wishlist/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FRM-V1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FRM-V1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WishlistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WishlistController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Wishlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Wishlist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_14_070132_create_wishlists_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_14_070132_create_wishlists_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/create.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/wishlist/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/wishlist/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -107,6 +130,7 @@
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1hUYFyE9DRC87YJzxbzqvXWZ8Qj" />
@@ -117,8 +141,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jaspe\Desktop\FRM-V1\resources\views\wishlist" />
+      <recent name="C:\Users\Jaspe\Desktop\FRM-V1\resources\views\sessions" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -149,6 +181,8 @@
       <option name="presentableId" value="Default" />
       <updated>1600067037346</updated>
       <workItem from="1600067039207" duration="9130000" />
+      <workItem from="1600170451800" duration="3140000" />
+      <workItem from="1600593618066" duration="13321000" />
     </task>
     <servers />
   </component>
@@ -160,6 +194,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="643" y="290" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1600067810286" />
+    <state x="1335" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600598492179">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1335" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.3440.1400/3440.139.2560.1400@0.0.3440.1400" timestamp="1600598492179" />
+    <state x="1446" y="454" key="NewPhpClassDialog" timestamp="1600598151769">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="1446" y="454" key="NewPhpClassDialog/0.0.3440.1400/3440.139.2560.1400@0.0.3440.1400" timestamp="1600598151769" />
     <state x="751" y="421" key="NewPhpFileDialog" timestamp="1600067844387">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -168,9 +210,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="563" y="159" width="794" height="722" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600068926761" />
-    <state x="532" y="237" key="run.anything.popup" timestamp="1600070066345">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="953" y="319" width="840" height="1034" key="run.anything.popup" timestamp="1600601884065">
+      <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="532" y="237" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1600070066345" />
+    <state x="953" y="319" width="840" height="1034" key="run.anything.popup/0.0.3440.1400/3440.139.2560.1400@0.0.3440.1400" timestamp="1600601884065" />
   </component>
 </project>

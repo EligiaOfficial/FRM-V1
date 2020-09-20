@@ -15,6 +15,7 @@ class CreateWishlistsTable extends Migration
     {
         Schema::create('wishlist', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('user_id');
             $table->string('name');
             $table->string('thumbnail_name')->unique();
             $table->string('description');
