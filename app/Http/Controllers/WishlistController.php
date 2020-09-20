@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Wishlist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
@@ -46,7 +47,7 @@ class WishlistController extends Controller
         $wishlist->product_link = $request->product_link;
         $wishlist->save();
 
-        return redirect('wishlist.list');
+        return redirect('wishlist');
     }
 
     public function show($id)
@@ -63,22 +64,32 @@ class WishlistController extends Controller
 
     public function update(Request $request, $id)
     {
+
         $request->validate([
             'name' => 'required',
             'product_link' => 'required',
             'description' => 'required',
-            'thumbnail_name' => 'required',
             'price' => 'required'
         ]);
+
         $update = [
             'name' => $request->name,
             'description' => $request->description,
             'product_link' => $request->product_link,
-            'thumbnail_name' => $request->thumbnail_name,
             'price' => $request->price
         ];
+
+        if ($request->hasFile('image')) {
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+            $update = Arr::add($update, 'thumbnail_name', $fileNameToStore);
+        }
+        
         Wishlist::where('id', $id)->update($update);
-        return redirect('wishlist.list');
+        return redirect('wishlist');
     }
 
 

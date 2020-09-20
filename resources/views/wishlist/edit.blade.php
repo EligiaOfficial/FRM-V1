@@ -1,48 +1,38 @@
 @extends('layouts.app')
 @section('content')
-    <h2 style="margin-top: 12px;" class="text-center">Edit Product</a></h2>
-    <br>
+
+    <div class="row">
+        <div class="col dark-color-4">
+            <h2 style="margin-top: 12px;" class="text-center">Edit Product</a></h2>
+        </div>
+    </div>
+
     <form action="{{ route('wishlists.update', $wishlist->id) }}" method="POST" name="update_product">
         {{ csrf_field() }}
         @method('PATCH')
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <strong>Name</strong>
-                    <input type="text" name="name" class="form-control" placeholder="Enter Title">
-                    <span class="text-danger">{{ $errors->first('name') }}</span>
-                </div>
+        <div class="">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" id="name" placeholder="Name" class="form-control dark-color-3" />
             </div>
-            <div class="col-md-12">
-                <div class="form-group">
-                    <strong>Image URL</strong>
-                    <input type="text" name="thumbnail_name" class="form-control" placeholder="Enter Image URL">
-                    <span class="text-danger">{{ $errors->first('thumbnail_name') }}</span>
-                </div>
+            <div class="form-group">
+                <label>Image</label>
+                <input type="file" name="image" class="form-control dark-color-3 p-1">
             </div>
-            <div class="col-md-12">
-                <div class="form-group">
-                    <strong>Description</strong>
-                    <input type="text" name="description" class="form-control" placeholder="Enter Description">
-                    <span class="text-danger">{{ $errors->first('description') }}</span>
-                </div>
+            <div class="form-group">
+                <label>Description</label>
+                <input type="text" name="description" id="description" placeholder="Description" class="form-control dark-color-3" />
             </div>
-            <div class="col-md-12">
-                <div class="form-group">
-                    <strong>Price</strong>
-                    <input type="text" name="price" class="form-control" placeholder="Enter Price">
-                    <span class="text-danger">{{ $errors->first('price') }}</span>
-                </div>
+            <div class="form-group">
+                <label>Price</label>
+                <input type="text" name="price" id="price" placeholder="Price" class="form-control dark-color-3" />
             </div>
-            <div class="col-md-12">
-                <div class="form-group">
-                    <strong>Product Link</strong>
-                    <input type="text" name="product_link" class="form-control" placeholder="Enter Product Link">
-                    <span class="text-danger">{{ $errors->first('product_link') }}</span>
-                </div>
+            <div class="form-group">
+                <label>Link to Product</label>
+                <input type="text" name="product_link" id="product_link" placeholder="Link to product" class="form-control dark-color-3" />
             </div>
-            <div class="col-md-12">
-                <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-group">
+                <button class="btn btn-dark btn-lg float-right" type="submit">Submit</button>
             </div>
         </div>
     </form>
