@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
 
+{{-- ID 1 is admin in dit geval omdat het het 1e account is die wordt aangemaakt. --}}
+    @if (Auth::id() == $wishlist->user_id || Auth::id() == "1")
+
     <div class="row">
         <div class="col dark-color-4">
             <h2 style="margin-top: 12px;" class="text-center">Edit Product</a></h2>
@@ -36,4 +39,5 @@
             </div>
         </div>
     </form>
+    @endif
 @endsection

@@ -13,8 +13,11 @@ class WishlistController extends Controller
 
     public function index()
     {
-        $data = Wishlist::all();
-        return view('wishlist.list')->with('wishlist', $data);
+        $data2 = Wishlist::raw('CONCAT(wishlist.name) as wishlistname')
+            ->Join('users', 'users.id', '=', 'wishlist.user_id')
+            ->get(['wishlist.*', 'users.name as user_name']);
+//        $data = Wishlist::all();
+        return view('wishlist.list')->with('wishlist', $data2);
     }
 
 
@@ -87,7 +90,7 @@ class WishlistController extends Controller
             $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
             $update = Arr::add($update, 'thumbnail_name', $fileNameToStore);
         }
-        
+
         Wishlist::where('id', $id)->update($update);
         return redirect('wishlist');
     }
